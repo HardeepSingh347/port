@@ -96,13 +96,15 @@
 
 				<div class="row">
 					<div class="col-lg-6 col-sm-6 mt-1">
-					<img src="images/job1.jpg" class="img-thumbnail jobs" data-toggle="modal" data-target=".bd-example-modal-lg" id="job1" data-id="img1">
+					<!-- <video src="images/job1.mp4" class="img-thumbnail jobs" data-toggle="modal" data-target=".bd-example-modal-lg" id="job2" height="200px"></video> -->
+					<img src="images/job1.jpg" class="img-thumbnail jobs" data-toggle="modal" data-target=".bd-example-modal-lg" id="job1" data-id="images/job1.mp4">
 					<h2 class="my-3 text-dark">Command-line Dictionary</h2>
 					<p class="text-muted">A command-line dictionary app, that suggests the correct word if you misspelled something.</p>
 					</div>
 
 					<div class="col-lg-6 col-sm-6 mt-2">
-					<img src="images/job2.jpg" class="img-thumbnail jobs" data-toggle="modal" data-target=".bd-example-modal-lg" id="job2" data-id="img1">
+					<!-- <video src="images/video.mp4" class="img-thumbnail jobs" data-toggle="modal" data-target=".bd-example-modal-lg" id="job2"></video> -->
+					<img src="images/job2.jpg" class="img-thumbnail jobs" data-toggle="modal" data-target=".bd-example-modal-lg" id="job2" data-id="images/job2.mp4">
 					<h2 class="my-3 text-dark">Complete Portfolio website</h2>
 					<p class="text-muted">a complete portfolio website using python 3 and django 2.0.2 and postgreSQL databaase. Working on a local Server</p>
 					</div>
@@ -118,11 +120,11 @@
 							</div>
 						</div> -->
 
-						<div class="modal-body text-center">
-							<button type="button" class="close mb-4" data-dismiss="modal" aria-label="Close">
+						<div class="modal-body text-center" id="close">
+							<button type="button" class="close mb-4" data-dismiss="modal" aria-label="Stop">
 								<span aria-hidden="true" class="bg-light px-2">&times;</span>
 							</button>
-							<img src="" id="modalimg" width="100% mr-4">
+							<video src="" id="modalimg" width="100% mr-4" track="mute" autoplay>
 						</div>
 					</div>
 				</div>
@@ -238,9 +240,10 @@
 		$(function() {
 			var modal = document.getElementById('modal');
 			var modalimg = document.getElementById('modalimg');
+			var close = document.getElementById('close');
 			var img = $('.jobs');
 			$(img).on('click', function(){
-				var src = $(this).attr('src');
+				var src = $(this).attr('data-id');
 				modalimg.src = src;
 			})
 		})
